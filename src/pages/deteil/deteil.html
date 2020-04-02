@@ -1,0 +1,90 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>deteil</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-slides pager="true" >
+      <ion-slide *ngFor="let show of showdeteilImg ">
+          <ion-thumbnail item-start>
+            <img src="assets/imgs/{{show.pic_name}}" style="width:300px;height:320px;" />     
+          </ion-thumbnail> 
+          {{show.room_province}}
+  </ion-slide>
+</ion-slides>
+</ion-card>
+
+
+<ion-list *ngFor="let show of showdeteileData">
+  <ion-item>
+    <p><b>ชื่อห้องเช่า :</b> {{show.room_name}} </p>
+  </ion-item>
+  <ion-item>
+      <p><b>ที่อยู่ :</b> {{show.rooms_address}}</p>
+    </ion-item>
+    <ion-item>
+        <p><b>ราคา :</b> {{show.room_price}}</p>
+      </ion-item>
+      <ion-item>
+          <p><b>สิ่งอำนวยความสะดวก :</b> {{show.category_name}}</p>
+        </ion-item>
+        <ion-item>
+            <p><b>จำกัดเพศผู้เช่า :</b> {{show.room_category}}</p>
+          </ion-item>
+          <ion-item>
+              <p><b>เบอร์ติดต่อ :</b> {{show.room_tell}}</p>
+            </ion-item>
+          <br>
+            <button ion-button block (click)="shareRoom(show)" >SHARE ON FACEBOOK</button>
+            <br>
+  <ion-grid>
+      <ion-row padding>
+        <ion-col width-10>
+            <ionic3-star-rating 
+            activeIcon = "ios-star"
+            defaultIcon = "ios-star-outline"
+            activeColor = "#f4e242" 
+            defaultColor = "#f4e242"
+            readonly="false"
+            [rating]="1">
+          </ionic3-star-rating>
+          คะแนน :{{score}}
+        </ion-col>
+        <ion-col width-2>
+            <ion-buttons end>
+          <button ion-button small (click)="scoreview(show.room_id)"> ให้คะแนน</button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-note>ความคิดเห็น</ion-note>
+<br>
+
+<ion-item *ngFor="let get of datcom">    
+  <ion-label>
+    <ion-icon name="contact"></ion-icon>
+    {{get.comment_text}}
+  </ion-label>
+</ion-item>
+
+
+
+    <ion-item >    
+        <ion-icon name="person"></ion-icon>
+        <ion-label>
+          <ion-icon name="contact"></ion-icon>
+        </ion-label>
+        <ion-input type="" [(ngModel)]="member.text" ></ion-input>
+      </ion-item>
+  <ion-buttons end>
+      <button ion-button small color="secondary" outline  (click)="textroom(show.room_id)">
+       ส่ง
+      </button>
+    </ion-buttons>
+  </ion-list>
+</ion-content>

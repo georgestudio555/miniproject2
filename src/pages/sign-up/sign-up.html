@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Signup</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>name</ion-label>
+    <ion-input type="" [(ngModel)]="regisResult.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>surname</ion-label>
+    <ion-input type="" [(ngModel)]="regisResult.surname"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>username</ion-label>
+    <ion-input type="" [(ngModel)]="regisResult.username"></ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-label floating>password</ion-label>
+    <ion-input type="password" [(ngModel)]="regisResult.password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>email</ion-label>
+    <ion-input type="" [(ngModel)]="regisResult.email"></ion-input>
+  </ion-item>
+
+
+  <button ion-button block icon-lef (click)="signUp()">
+    &nbsp;ลงทะเบียน
+  </button>
+  <button ion-button block icon-lef (click)="goSignUp()"> &nbsp;เข้าสู่ระบบ
+  </button>
+  <button ion-button block icon-lef (click)="cancel()"> &nbsp;ยกเลิก
+  </button>
+  
+
+</ion-content>

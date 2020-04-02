@@ -1,0 +1,41 @@
+<!--
+  Generated template for the DeteilPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>List Room</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+    <ion-searchbar (ionInput)="getItems($event)" clearInput></ion-searchbar>
+
+    <ion-fab below  right edge>
+        <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+        <ion-fab-list side="start">
+          <button ion-fab (click)="search()"><ion-icon name="funnel"></ion-icon></button>
+        </ion-fab-list>
+      </ion-fab>
+
+  <ion-list>
+    <ion-card *ngFor="let get of typeRoom">
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="assets/imgs/{{get.title_img}}">
+        </ion-thumbnail>
+        <h2>ชื่อ:{{get.room_name}}</h2>
+        <p>ที่อยู่่ : {{get.rooms_address}} </p>
+      
+          <p> ราคา : {{get.room_price}} THB</p>
+        <button ion-button color="primary" (click)="showDeteil(get.room_id,get.category_name)">รายละเอียด</button>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</ion-content>

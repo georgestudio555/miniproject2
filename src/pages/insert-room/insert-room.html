@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>เพิ่มห้องเช่า</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <!-- <ion-row>
+    <ion-col>
+      <div class="images">
+        <div class="one-image" *ngFor="let img of imageResponse">
+          <img src="{{img}}" alt="" srcset="">
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+  <button ion-button block (click)="importImg()">เลือกจากอัลบัม</button> -->
+  <ion-item>
+    <ion-label floating>ชื่อห้องเช่า</ion-label>
+    <ion-input type="" [(ngModel)]="result.roomname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>ราคา THB</ion-label>
+    <ion-input type="" [(ngModel)]="result.price"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>ประเภทห้องเช่า</ion-label>
+    <ion-select [(ngModel)]="result.category">
+      <ion-option value="1">คอนโนมิเนียม</ion-option>
+      <ion-option value="2">อพาร์ทเม้นท์</ion-option>
+      <ion-option value="3">แมนชัน</ion-option>
+      <ion-option value="4">หอพัก</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>จำกัดเพศผู้เช่า</ion-label>
+    <ion-select [(ngModel)]="result.type">
+      <ion-option value="หญิง">หญิง</ion-option>
+      <ion-option value="ชาย">ชาย</ion-option>
+      <ion-option value="ไม่จำกัด">ไม่จำกัด</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>เบอร์ติดต่อ</ion-label>
+    <ion-input type="" [(ngModel)]="result.tell"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>สิ่งอำนวยความสะดวก</ion-label>
+    <ion-input type="" [(ngModel)]="result.facilities"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>ที่อยู่</ion-label>
+    <ion-input type="" [(ngModel)]="result.address"></ion-input>
+  </ion-item>
+
+  <button ion-button block (click)="insertroom()">ส่ง</button>
+
+
+</ion-content>
